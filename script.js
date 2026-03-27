@@ -217,6 +217,12 @@ document.querySelectorAll('.skill-item').forEach((item, index) => {
     item.classList.add('animate-fade-in');
 });
 
+// About 섹션 애니메이션 비활성화
+// document.querySelectorAll('.career-highlight').forEach((item, index) => {
+//     item.style.animationDelay = `${index * 0.2}s`;
+//     item.classList.add('animate-fade-in');
+// });
+
 // 통계 숫자 애니메이션
 function animateNumbers() {
     const statNumbers = document.querySelectorAll('.stat-number');
@@ -280,13 +286,19 @@ window.addEventListener('resize', requestTick);
 
 // 초기 실행
 document.addEventListener('DOMContentLoaded', () => {
-    // 스크롤 애니메이션 요소 추가
-    document.querySelectorAll('.project-card, .skill-item, .stat-item').forEach(el => {
-        el.classList.add('scroll-animate');
-    });
+    // 스크롤 애니메이션 비활성화
+    // document.querySelectorAll('.project-card, .skill-item, .stat-item, .about-main, .career-highlight, .detailed-description').forEach(el => {
+    //     el.classList.add('scroll-animate');
+    // });
     
-    // 초기 애니메이션 실행
-    updateAnimations();
+    // detailed-description는 즉시 보이게 설정
+    // const detailedDesc = document.querySelector('.detailed-description');
+    // if (detailedDesc) {
+    //     detailedDesc.classList.add('active');
+    // }
+    
+    // 초기 애니메이션 실행 비활성화
+    // updateAnimations();
     
     // 히어로 타이틀 타이핑 효과 (선택적)
     const heroTitle = document.querySelector('.hero-title');

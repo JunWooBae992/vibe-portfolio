@@ -267,6 +267,79 @@ body {
     align-items: start;
 }
 
+.about-main {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    overflow: visible;
+    position: relative;
+    min-height: auto;
+}
+
+.about-main:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.career-highlight {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.career-highlight h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.career-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.detailed-description {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-section);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.detailed-description h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detailed-description h4::before {
+    content: '📋';
+    font-size: 1.2rem;
+}
+
+.detailed-description p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.detailed-description p:last-child {
+    margin-bottom: 0;
+}
+
 .about-text h3 {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
@@ -281,9 +354,15 @@ body {
 
 .about-info {
     margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    position: relative;
+    z-index: 2;
 }
 
 .info-item {
@@ -305,6 +384,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .stat-item {
@@ -314,6 +395,8 @@ body {
     border-radius: 15px;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    position: relative;
+    overflow: visible;
 }
 
 .stat-item:hover {
@@ -672,6 +755,32 @@ body {
         gap: 2rem;
     }
     
+    .about-main {
+        padding: 2rem;
+    }
+    
+    .career-highlight h3 {
+        font-size: 1.5rem;
+    }
+    
+    .career-description p {
+        font-size: 1rem;
+    }
+    
+    .detailed-description h4 {
+        font-size: 1.1rem;
+    }
+    
+    .detailed-description {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .about-info {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
     .about-stats {
         flex-direction: row;
         justify-content: space-around;
@@ -723,6 +832,28 @@ body {
     .about-stats {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .about-main {
+        padding: 1.5rem;
+    }
+    
+    .career-highlight h3 {
+        font-size: 1.3rem;
+    }
+    
+    .detailed-description h4 {
+        font-size: 1rem;
+    }
+    
+    .detailed-description {
+        padding: 0.75rem;
+        margin-top: 1rem;
+    }
+    
+    .about-info {
+        padding: 0.75rem;
+        margin-top: 1rem;
     }
     
     .stat-item {
