@@ -1,18 +1,22 @@
 /* CSS 변수 설정 */
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #f093fb;
-    --text-color: #2d3748;
-    --text-light: #718096;
+    --primary-color: #2563eb; /* Royal Blue */
+    --secondary-color: #1e40af; /* Deep Blue */
+    --accent-color: #3b82f6; /* Bright Blue */
+    --sidebar-bg: #0f172a; /* Slate 900 */
+    --sidebar-card-bg: #1e293b; /* Slate 800 */
+    --text-color: #1e293b; /* Slate 800 */
+    --text-light: #64748b; /* Slate 500 */
+    --text-white: #f8fafc; /* Slate 50 */
     --bg-color: #ffffff;
-    --bg-section: #f7fafc;
-    --border-color: #e2e8f0;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-section: #f1f5f9; /* Slate 100 */
+    --border-color: #e2e8f0; /* Slate 200 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-3d: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 기본 리셋 및 타이포그래피 */
@@ -101,6 +105,10 @@ body {
     color: var(--primary-color);
 }
 
+.nav-link.active {
+    color: var(--primary-color);
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -108,7 +116,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     transition: var(--transition);
 }
 
@@ -136,7 +144,7 @@ body {
     display: flex;
     align-items: center;
     padding: 5rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--sidebar-bg) 0%, var(--secondary-color) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -176,7 +184,7 @@ body {
 }
 
 .hero-title-highlight {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -230,11 +238,12 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
 }
 
 .btn-primary:hover {
+    background: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -242,12 +251,12 @@ body {
 .btn-secondary {
     background: transparent;
     color: white;
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
 }
 
 .btn-full {
@@ -268,14 +277,14 @@ body {
 }
 
 .about-main {
-    background: white;
+    background: var(--bg-color);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
     transition: var(--transition);
     overflow: visible;
     position: relative;
-    min-height: auto;
+    border: 1px solid var(--border-color);
 }
 
 .about-main:hover {
@@ -355,7 +364,7 @@ body {
 .about-info {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: white;
+    background: var(--bg-color);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     display: flex;
@@ -363,6 +372,7 @@ body {
     gap: 0.75rem;
     position: relative;
     z-index: 2;
+    border: 1px solid var(--border-color);
 }
 
 .info-item {
@@ -391,12 +401,13 @@ body {
 .stat-item {
     text-align: center;
     padding: 1.5rem;
-    background: white;
+    background: var(--bg-color);
     border-radius: 15px;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     position: relative;
     overflow: visible;
+    border: 1px solid var(--border-color);
 }
 
 .stat-item:hover {
@@ -443,12 +454,13 @@ body {
 }
 
 .skill-item {
-    background: white;
+    background: var(--bg-color);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow-md);
     text-align: center;
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .skill-item:hover {
@@ -495,11 +507,12 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: var(--bg-color);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
@@ -545,11 +558,12 @@ body {
 
 .tech-tag {
     background: var(--bg-section);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
 }
 
 .project-links {
@@ -627,10 +641,11 @@ body {
 
 /* 폼 스타일 */
 .form {
-    background: white;
+    background: var(--bg-color);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
